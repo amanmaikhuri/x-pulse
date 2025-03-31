@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.darkmode{
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.lightmode{
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+
+:root{
+    --primary-color: #1da1f2;
+    --secondary-color: #17bf63;
+    --warning-color: #ffad1f;
+    --danger-color: #e0245e;
+    --bg-dark: #15202b;
+    --bg-light: #ffffff;
+    --text-light: #e1e8ed;
+    --text-dark: #14171a;
+    --border-light: #657786;
+    --border-dark: #2f3386;
+    --success-color: #00c06b;
+    --info-color: #8899a6;
+}
+
+header{
+    padding: 0.5rem 2rem;
+    font-style: italic;
+}
+
+header h1{
+    color: var(--primary-color);
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width:600px){
+    .search-container{
+        flex-direction: column;
+    }
+}
+
+main{
+    height: 82vh;
+    max-width: 70vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    align-items: center;
+    border: 2px solid var(--border-light);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px var(--secondary-color);
+}
+
+@media (max-width: 600px){
+    main{
+        height: auto;
+        width: 95vw;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    #results{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#toggle{
+    position: fixed;
+    top: 2%; right: 3.5%;
+    border: 2px solid var(--border-light);
+    padding: 0.3rem;
+    border-radius: 50%;
+    background-color: var(--bg-light);
+    color: var(--secondary-color);
+    font-weight: bold;
+    box-shadow: 0 2px 4px var(--secondary-color);
+}
+
+#results{
+    color: var(--text-light);
+    background-color: var(--bg-light);
+    display: none;
+    transition: opacity 0.5s;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 0.5rem;
+}
+
+#results.show{
+    display: block;
+    opacity: 1;
+    background-color: var(--success-color);
+}
+
+#topic ,#analyze-btn{
+    padding: 6px;
+    border: 2px solid var(--border-light);
+    border-radius: 0.3rem;
+    font-weight: 400;
+}
+
+#analyze-btn{
+    font-weight: bold;
+    box-shadow: 0 2px 4px var(--secondary-color);
+}
+
+#analyze-btn:hover{
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+    transition: 0.3s ease-in;
+}
+
+
+footer{
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+    color: var(--primary-color);
+    border-top: 2px solid var(--border-light);
+}
